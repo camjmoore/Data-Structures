@@ -4,6 +4,11 @@ return elements in Last In First Out order.
 
 1. Implement the Stack class using an array as the underlying storage structure.
    Make sure the Stack tests pass.
+   i.) added element must have index of last item in the array (len + 1 or [:-1])
+   ii.) removed element must have index of last item in the array (len + 1 or [:-1])
+   iii.) all indexes less than last item cannot be removed
+   iv.)
+   v.)
 2. Re-implement the Stack class, this time using the linked list implementation
    as the underlying storage structure.
    Make sure the Stack tests pass.
@@ -15,13 +20,18 @@ return elements in Last In First Out order.
 class Stack:
     def __init__(self, size, storage):
         self.size = 0
-        self.storage = storage
+        self.storage = []
 
     def __len__(self):
         return len(self.storage)
 
     def push(self, value):
-        pass
+        self.storage + int(value)
 
     def pop(self):
-        pass
+        self.storage[:-1]
+
+
+stacky = Stack(16, [])
+stacky.push(5)
+print(stacky)
